@@ -7,58 +7,57 @@
 
 import UIKit
 
-struct Game {
-    let title: String
-    let year: String
-    init(_ name: String, _ year: String) {
-        self.title = name
-        self.year = year
-    }
-}
-
 class ViewController: UIViewController {
 
-    let games = [
+    // MARK: - Properties
+    private let games = [
                 Game("Pacman", "1980"),
                 Game("Space Invaders", "1978"),
                 Game("Frogger", "1981")
     ]
     
-    let cellId = "cellId"
-    let skeletonCellId = "skeletonCellId"
-    var tableView = UITableView()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(SkeletonCell.self, forCellReuseIdentifier: skeletonCellId)
+        return tableView
+    }()
     
-    var loaded = false
-    
-    lazy var loadButtonItem: UIBarButtonItem = {
+    private lazy var loadButtonItem: UIBarButtonItem = {
             let barButtonItem = UIBarButtonItem(title: "Load", style: .plain, target: self, action: #selector(loadTapped))
             return barButtonItem
     }()
     
+    private var loaded = false {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    private let cellId = "cellId"
+    private let skeletonCellId = "skeletonCellId"
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
-
-    func setup() {
-        title = "Skeleton Demo"
-        navigationItem.rightBarButtonItem = loadButtonItem
-        
-        tableView.dataSource = self
-
-        tableView.register(CustomCell.self, forCellReuseIdentifier: cellId)
-        tableView.register(SkeletonCell.self, forCellReuseIdentifier: skeletonCellId)
-        tableView.tableFooterView = UIView()
-        
-        view = tableView
-    }
     
+    // MARK: - Selectors
     @objc func loadTapped() {
-        loaded = !loaded
-        tableView.reloadData()
+        loaded.toggle()
+    }
+
+    // MARK: - Helpers
+    private func setup() {
+        navigationItem.title = "Practical Table Shimmer Effect"
+        navigationItem.rightBarButtonItem = loadButtonItem
+        view = tableView
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -79,12 +78,12 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-func makeButton(withText text: String) -> UIButton {
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitle(text, for: .normal)
-    button.titleLabel?.adjustsFontSizeToFitWidth = true
-    button.backgroundColor = .systemBlue
-    button.layer.cornerRadius = 8
-    return button
+// MARK: - Game
+struct Game {
+    let title: String
+    let year: String
+    init(_ name: String, _ year: String) {
+        self.title = name
+        self.year = year
+    }
 }

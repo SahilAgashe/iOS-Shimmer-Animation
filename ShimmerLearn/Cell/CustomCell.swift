@@ -9,8 +9,9 @@ import UIKit
 
 class CustomCell: UITableViewCell {
 
-    let titleLabel = UILabel()
-    let yearLabel = UILabel()
+    // MARK: - Properties
+    private let titleLabel = UILabel()
+    private let yearLabel = UILabel()
     
     var game: Game? {
         didSet {
@@ -20,25 +21,21 @@ class CustomCell: UITableViewCell {
         }
     }
     
+    // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-        layout()
+        configureUI()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension CustomCell {
-
-    func setup() {
+    
+    // MARK: - Helpers
+    private func configureUI() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         yearLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func layout() {
+        
         addSubview(titleLabel)
         addSubview(yearLabel)
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813662A62BD3C669000ABA09 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813662A52BD3C669000ABA09 /* MainTabController.swift */; };
+		813662A82BD3D018000ABA09 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813662A72BD3D018000ABA09 /* UIColor+Extension.swift */; };
 		81A3EEAC2BCBD4EF00003B3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3EEAB2BCBD4EF00003B3F /* ViewController.swift */; };
 		81A3EEAF2BCBD55F00003B3F /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3EEAE2BCBD55F00003B3F /* SkeletonLoadable.swift */; };
 		81A3EEB12BCBD9B700003B3F /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3EEB02BCBD9B700003B3F /* SkeletonCell.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		813662A52BD3C669000ABA09 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		813662A72BD3D018000ABA09 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		81A3EEAB2BCBD4EF00003B3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81A3EEAE2BCBD55F00003B3F /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		81A3EEB02BCBD9B700003B3F /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 			children = (
 				81F8E1A52BBE5E57005D678D /* DemoController.swift */,
 				81A3EEAB2BCBD4EF00003B3F /* ViewController.swift */,
+				813662A52BD3C669000ABA09 /* MainTabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -63,12 +68,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		81A3EEB42BCBDAEA00003B3F /* Protocol */ = {
+		81A3EEB42BCBDAEA00003B3F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				81A3EEAE2BCBD55F00003B3F /* SkeletonLoadable.swift */,
+				813662A72BD3D018000ABA09 /* UIColor+Extension.swift */,
 			);
-			path = Protocol;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		81A3EEB52BCBDB0900003B3F /* Cell */ = {
@@ -100,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				81A3EEAD2BCBD51500003B3F /* Application */,
-				81A3EEB42BCBDAEA00003B3F /* Protocol */,
+				81A3EEB42BCBDAEA00003B3F /* Helpers */,
 				81A3EEB52BCBDB0900003B3F /* Cell */,
 				81A3EEAA2BCBD4CA00003B3F /* Controller */,
 				81F8E1A72BBE5E57005D678D /* Main.storyboard */,
@@ -184,6 +190,8 @@
 			files = (
 				81F8E1A62BBE5E57005D678D /* DemoController.swift in Sources */,
 				81F8E1A22BBE5E57005D678D /* AppDelegate.swift in Sources */,
+				813662A62BD3C669000ABA09 /* MainTabController.swift in Sources */,
+				813662A82BD3D018000ABA09 /* UIColor+Extension.swift in Sources */,
 				81A3EEAC2BCBD4EF00003B3F /* ViewController.swift in Sources */,
 				81A3EEAF2BCBD55F00003B3F /* SkeletonLoadable.swift in Sources */,
 				81A3EEB12BCBD9B700003B3F /* SkeletonCell.swift in Sources */,

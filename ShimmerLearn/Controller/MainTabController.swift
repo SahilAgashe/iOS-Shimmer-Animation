@@ -15,9 +15,11 @@ class MainTabController: UITabBarController {
         
         let demoController = UINavigationController(rootViewController: DemoController())
         demoController.tabBarItem.title = "Demo"
+        demoController.tabBarItem.image = UIImage(systemName: "staroflife.circle")
         
         let viewController = UINavigationController(rootViewController: ViewController())
         viewController.tabBarItem.title = "Practical"
+        viewController.tabBarItem.image = UIImage(systemName: "restart.circle")
         
         viewControllers = [viewController, demoController]
     }

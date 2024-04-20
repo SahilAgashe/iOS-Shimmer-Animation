@@ -11,9 +11,9 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
     private let games = [
-                Game("Pacman", "1980"),
-                Game("Space Invaders", "1978"),
-                Game("Frogger", "1981")
+                Game("Roman Reings", "1316"),
+                Game("Dean Ambrose", "500"),
+                Game("Seth Rollins", "400")
     ]
     
     private lazy var tableView: UITableView = {
